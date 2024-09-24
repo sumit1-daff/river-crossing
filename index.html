@@ -12,9 +12,9 @@
     <h1>RIVER CROSSING GAME</h1>
     <div class="container">
         <div class="bank">
-            <div class="upper-part">
+            <div class="upper-part left-bank">
                 <div class="score">
-                    No. of Crossing: <span id="crosing">0</span>
+                    No. of Crossing: <span id="crossing"></span>
                 </div>
                 <div class="element human">
                     <img class="ele-img" src="/media/human.png" alt="">
@@ -28,35 +28,31 @@
         </div>
         <div class="river">
             <div class="upper-part" style="height: 60%;">
-                <div class="move-part">
+                <div class="original move-part">
                     <div class="contain-element">
                     </div>
                     <div class="boat">
                         <img class="boat-img" src="/media/boat.png" alt="">
                     </div>
                 </div>
+                <!-- <div class="moved-element"></div> -->
             </div>
         </div>
         <div class="bank">
-            <div class="upper-part">
-                <div class="element zombie"><img class="ele-img" src="/media/zombie.png" alt=""></div>
-                <div class="element zombie"><img class="ele-img" src="/media/zombie.png" alt=""></div>
-                <div class="element zombie"><img class="ele-img" src="/media/zombie.png" alt=""></div>
-                <div class="element human"><img class="ele-img" src="/media/human.png" alt=""></div>
-                <div class="element human"><img class="ele-img" src="/media/human.png" alt=""></div>
-                <div class="element human"><img class="ele-img" src="/media/human.png" alt=""></div> 
+            <div class="upper-part right-bank">
+                
             </div>
         </div>
     </div>
     <div class="controls">
         <div class="btn mv-back">
-            <button><img class="cntrl-logo" src="/media/backward.png" alt=""></button>
+            <button><img class="cntrl-logo" src="/media/backward.png" alt="" id="bck_btn"></button>
         </div>
         <div class="btn reset">
             <button><img class="cntrl-logo" src="/media/restart.png" alt=""></button>
         </div>
         <div class="btn mv-fwd">
-            <button><img class="cntrl-logo" src="/media/forward.png" alt=""></button>
+            <button><img class="cntrl-logo" src="/media/forward.png" alt="" id="fwd_btn"></button>
         </div>
     </div>
     <div class="container info">
