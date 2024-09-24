@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>River Crossing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>RIVER CROSSING GAME</h1>
+    <div class="container">
+        <div class="bank">
+            <div class="upper-part">
+                <div class="score">
+                    No. of Crossing: <span id="crosing">0</span>
+                </div>
+                <div class="element human">
+                    <img class="ele-img" src="/media/human.png" alt="">
+                </div>
+                <div class="element human"><img class="ele-img" src="/media/human.png" alt=""></div>
+                <div class="element human"><img class="ele-img" src="/media/human.png" alt=""></div>
+                <div class="element zombie"><img class="ele-img" src="/media/zombie.png" alt=""></div>
+                <div class="element zombie"><img class="ele-img" src="/media/zombie.png" alt=""></div>
+                <div class="element zombie"><img class="ele-img" src="/media/zombie.png" alt=""></div>
+            </div>
+        </div>
+        <div class="river">
+            <div class="upper-part" style="height: 60%;">
+                <div class="move-part">
+                    <div class="contain-element">
+                    </div>
+                    <div class="boat">
+                        <img class="boat-img" src="/media/boat.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bank">
+            <div class="upper-part">
+                <div class="element zombie"><img class="ele-img" src="/media/zombie.png" alt=""></div>
+                <div class="element zombie"><img class="ele-img" src="/media/zombie.png" alt=""></div>
+                <div class="element zombie"><img class="ele-img" src="/media/zombie.png" alt=""></div>
+                <div class="element human"><img class="ele-img" src="/media/human.png" alt=""></div>
+                <div class="element human"><img class="ele-img" src="/media/human.png" alt=""></div>
+                <div class="element human"><img class="ele-img" src="/media/human.png" alt=""></div> 
+            </div>
+        </div>
+    </div>
+    <div class="controls">
+        <div class="btn mv-back">
+            <button><img class="cntrl-logo" src="/media/backward.png" alt=""></button>
+        </div>
+        <div class="btn reset">
+            <button><img class="cntrl-logo" src="/media/restart.png" alt=""></button>
+        </div>
+        <div class="btn mv-fwd">
+            <button><img class="cntrl-logo" src="/media/forward.png" alt=""></button>
+        </div>
+    </div>
+    <div class="container info">
+        <h2>Rules</h2>
+        <p><strong>1.</strong> Transport all the members from the left bank to the right bank of the river</p>
+        <p><strong>2.</strong> You can only use boat to transfer the members.</p>
+        <p><strong>3.</strong> Boat have maximum capacity of 2 people. Boat can run only if there is someone present in the boat.</p>
+        <p><strong>4.</strong> The number of zombies should never exceed the number of humans at either bank.</p>
+        <p><strong>5.</strong> If the zombies are greater in number player will lose the game.</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+<script>
+
+
+</script>
+
+</html>
