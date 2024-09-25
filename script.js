@@ -57,31 +57,12 @@ function removeBoat(element) {
 
 const fwd_btn = document.querySelector("#fwd_btn");
 const move = document.querySelector(".move-part");
-const boat_right = document.querySelector(".moved-element");
 fwd_btn.onclick = (e) =>{
     if(cap>0){
         cross++;
         move.classList.add('moved-element');
         move.classList.remove('original');
-        const right_bank = document.querySelector(".right-bank");
-        // let human_on_bank = right_bank.querySelectorAll(".human");
-        // let zombie_on_bank = right_bank.querySelectorAll(".zombie");
-        // let human_on_boat = 0;
-        // let zombie_on_boat = 0;
-        // if(boat_right.querySelector(".human")){
-        //     human_on_boat = boat_right.querySelectorAll(".human").length;
-        // }
-        // if(boat_right.querySelector(".zombie")){
-        //     zombie_on_boat = boat_right.querySelectorAll(".zombie").length;
-        // }
-        // human_on_right += human_on_bank.length;
-        // human_on_right += human_on_boat.length;
-        // zombie_on_right += zombie_on_bank.length;
-        // zombie_on_right += zombie_on_boat.length;
-        // if(checkCondition(human_on_right,zombie_on_right)){
-        //     alert("Try again");
-        // }
-
+        check_right();
     }
     else{
         alert("Atleast one animal should be present in the boat");
@@ -95,24 +76,48 @@ bck_btn.onclick = (e) =>{
         move.classList.add('original');
         boat_left = document.querySelector(".original");
         const left_bank = document.querySelector(".left-bank");
-        // let human_on_bank = left_bank.querySelectorAll(".human");
-        // let zombie_on_bank = left_bank.querySelectorAll(".zombie");
-        // let human_on_boat = boat_left.querySelectorAll(".human");
-        // let zombie_on_boat = boat_left.querySelectorAll(".zombie");
-        // human_on_left += human_on_bank.length;
-        // human_on_left += human_on_boat.length;
-        // zombie_on_left += zombie_on_bank.length;
-        // zombie_on_left+= zombie_on_boat.length;
-        // if(checkCondition(human_on_left,zombie_on_left)){
-        //     alert("Try again");
-        // }
+        check_left();
     }
     else{
         alert("Atleast one animal should be present in the boat");
     }
 }
 document.getElementById("crossing").innerHTML = cross;
+
+
 function checkCondition(humans,zombie){
-    if(humans<zombie)   return true;
+    if(humans<zombie && humans!=0){
+        alert("You lost");
+    }
     else return false;
+}
+
+const check_right = () =>{
+    const boat_right = document.querySelector(".moved-element");
+    const right_bank = document.querySelector(".right-bank");
+    let human_on_right = right_bank.querySelectorAll(".human");
+    human_on_right = human_on_right ? human_on_right.length : 0;
+    let zombie_on_right = right_bank.querySelectorAll(".zombie");
+    zombie_on_right = zombie_on_right ? zombie_on_right.length : 0;
+    let zombie_on_boat = boat_right.querySelectorAll(".zombie");
+    zombie_on_boat = zombie_on_boat ? zombie_on_boat.length : 0;
+    let human_on_boat = boat_right.querySelectorAll(".human");
+    human_on_boat = human_on_boat ? human_on_boat.length : 0;
+    console.log(human_on_right+human_on_boat , zombie_on_right+zombie_on_boat)
+    checkCondition(human_on_right+human_on_boat , zombie_on_right+zombie_on_boat);
+}
+
+const check_left = () =>{
+    const boat_left = document.querySelector(".original");
+    const left_bank = document.querySelector(".left-bank");
+    let human_on_left = left_bank.querySelectorAll(".human");
+    human_on_left = human_on_left ? human_on_left.length : 0;
+    let zombie_on_left = left_bank.querySelectorAll(".zombie");
+    zombie_on_left = zombie_on_left ? zombie_on_left.length : 0;
+    let zombie_on_boat = boat_left.querySelectorAll(".zombie");
+    zombie_on_boat = zombie_on_boat ? zombie_on_boat.length : 0;
+    let human_on_boat = boat_left.querySelectorAll(".human");
+    human_on_boat = human_on_boat ? human_on_boat.length : 0;
+    console.log(human_on_left+human_on_boat , zombie_on_left+zombie_on_boat)
+    checkCondition(human_on_left+human_on_boat , zombie_on_left+zombie_on_boat);
 }
